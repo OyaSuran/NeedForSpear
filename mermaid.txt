@@ -1,0 +1,90 @@
+classDiagram
+
+    direction LR
+    Player "1*" --> "1" NeedForSpearGame : plays 
+    GameState "1" --> "1" NeedForSpearGame : describes
+    Ball "1" --> "1*" Obstacle: hits
+    Player "1" --> "1" Paddle : controls
+    Paddle "1"  --> "1" Ball : reflects
+    Authenticator "1" --> "1" Player: authenticates
+    Obstacle "1" --> "*" MagicalBox : drops
+    MagicalBox "1" --> MagicalAbility : evokes
+    MagicalAbility "1" --> "1" GameState : affects
+    Paddle "1" --> "1" MagicalBox : catches
+    Player "1" --> "*" MagicalAbility : activates
+    Player "1" --> "1*" Layout : builds
+    NeedForSpearGame "1" --> "1*" Obstacle : generates
+    NeedForSpearGame "1" --> "1" Layout : uses
+    Ymir "1" --> "1" MagicalAbility : activates
+    Saver "1" --> "1" NeedForSpearGame : saves
+     
+
+
+    class NeedForSpearGame{
+
+    }
+
+    class Player{
+      id
+      userName
+      chances
+      score
+    }
+
+    class Obstacle{
+      type
+      speed
+      position
+      pattern
+      response
+    }      
+
+    class Paddle{
+      position
+      angle
+    }
+
+    class Ball{
+      speed
+      permeability
+    }
+
+    class GameState{
+      player
+      obstacles
+      time
+      paddle
+    }
+
+
+    class Authenticator{
+
+    }
+
+    class MagicalAbility{
+      type
+      duration
+      state
+    }
+
+    class MagicalBox {
+      abilityType
+      position
+      speed
+      state
+    }
+
+    class Layout {
+      grid
+      obstacleCount
+      file
+    }
+
+    class Ymir {
+        frequency
+        probability
+    }
+
+    class Saver {
+        file
+    }
