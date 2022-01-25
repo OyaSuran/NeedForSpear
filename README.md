@@ -7,3 +7,8 @@ Our group consists of:
 - Deniz Erdogan
 - Beyzanur Coban
 - Yigithan Sanlik
+
+This project was used to learn Object Orianted Design and Agile Devolopment
+
+To Run:
+You need to build dependences between the NeedforSpear and json bson jars. Both jars are included inside the project
